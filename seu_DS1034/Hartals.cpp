@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <time.h>
 
 int main(){
+    double t1, t2;
     int t;
     scanf("%d",&t);
 
