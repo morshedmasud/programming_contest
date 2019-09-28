@@ -3,6 +3,7 @@
   ID: 2018100010018
 */
 
+
 #include <stdio.h>
 #include <iostream>
 using namespace std;
@@ -33,23 +34,29 @@ void push(int data){
 
 int pop(){
   if(root == NULL){
-    printf("Can't pop cause your stack is empty\n");
-  }
-  if(!root->next){
-    root = NULL;
-  }
-  else{
+    printf("Can't pop cause your queue is empty\n");
+  }else{
     node *current_node = root;
-    node *prev_node = NULL;
-    while(current_node->next != NULL){
-      prev_node = current_node;
-      current_node = current_node->next;
-    }
-    prev_node->next = NULL;
     int pop_value = current_node->data;
-    printf("the value of pop: %d\n", pop_value);
+    root = current_node->next;
     delete(current_node);
+    printf("value of pop: %d\n", pop_value);
   }
+  // if(!root->next){
+  //   root = NULL;
+  // }
+  // else{
+  //   node *current_node = root;
+  //   node *prev_node = NULL;
+  //   while(current_node->next != NULL){
+  //     prev_node = current_node;
+  //     current_node = current_node->next;
+  //   }
+  //   prev_node->next = NULL;
+  //   int pop_value = current_node->data;
+  //   printf("the value of pop: %d\n", pop_value);
+  //   delete(current_node);
+  // }
 
   return 0;
 }
@@ -80,6 +87,12 @@ int main(){
   pop();
   pop();
   pop();
+  pop();
+  pop();
+
+  push(10);
+  pop();
+  push(8);
 
 
 	print();
